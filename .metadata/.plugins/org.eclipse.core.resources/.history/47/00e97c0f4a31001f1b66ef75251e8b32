@@ -1,0 +1,30 @@
+package com.Assignment;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class RegisterGmail {
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver","G:\\Selenium\\chromedriver-win64\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		//to open a website
+		driver.get("https://accounts.google.com/");
+		
+//		driver.findElement(By.xpath("//*[@id=\"gb\"]/div/div[2]/a")).click();
+
+//		driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[3]/div/div[2]/div/div/div[1]/div/button/div[3]")).click();
+//		driver.findElement(By.xpath("//div[@class='VfPpkd-RLmnJb']")).click();
+		driver.findElement(By.cssSelector("div.VfPpkd-RLmnJb")).click();
+//		driver.findElement(By.partialLinkText("Create")).click();
+		Thread.sleep(1000);
+		driver.close();
+
+	}
+
+}

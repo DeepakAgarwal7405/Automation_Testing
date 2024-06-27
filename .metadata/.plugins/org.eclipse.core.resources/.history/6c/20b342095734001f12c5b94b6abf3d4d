@@ -1,0 +1,60 @@
+package com.Assignment;
+
+import static org.junit.Assert.fail;
+
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
+
+public class Assertion {
+//	@Ignore
+	@Test
+	public void test1() {
+		int a=12,b=6;
+		
+		//condition check karne ke liye
+		Assert.assertTrue(a>b);
+		Assert.assertFalse(a<b);
+	}
+	
+//	@Ignore
+	@Test
+	public void test2() {
+		int c=12,d=12;
+		//Assert Same and Assert equals are same use Function
+//		Assert.assertSame(a, b);
+		Assert.assertNotSame(c, d);
+//		Assert.assertEquals(b, a);
+//		Assert.assertNotEquals(b, a);;
+	}
+	
+//	@Ignore
+	@Test
+	public void test3() {
+		String name="Deepak";
+		String name1=null;
+		
+		
+		Assert.assertNotNull(name);
+		Assert.assertNull(name1);
+		
+	}
+	@Ignore
+	@Test
+	public void test4() {
+		int[] a= {12,34,56,78};
+		int[] b= {12,34,56,78};
+		int[] c= {12,34,56};
+		
+		
+		Assert.assertArrayEquals(a, b);
+		Assert.assertArrayEquals(a,c);
+	}
+	@Ignore
+	@Test
+	public void SelfFail() {
+		System.out.println("This function is self failed....");
+		fail();
+	}
+
+}

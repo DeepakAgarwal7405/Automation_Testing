@@ -1,0 +1,36 @@
+package com.Assignment;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TestngLoginGmail {
+	WebDriver driver;
+	@Before
+	public void OpeningBrowserAndUrl() throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver","G:\\Selenium\\chromedriver-win64\\chromedriver.exe");
+		driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://accounts.google.com");
+		Thread.sleep(2000);	
+	}
+	@Test
+	public void LoginAccount() throws InterruptedException {
+	driver.findElement(By.id("identifierId")).sendKeys("7405748931");	
+	Thread.sleep(1000);
+	driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[3]/div/div[1]/div/div")).click();
+//	driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[3]/div/div[1]/div/div/button/div[3]")).click();
+	driver.findElement(By.xpath("//*[@id=\"password\"]/div[1]/div/div[1]/input")).sendKeys("Thangabali");	
+	Thread.sleep(1000);
+//	driver.findElement(By.xpath("//span[text()='Next']")).click();	
+	Thread.sleep(1000);
+	}
+//	@After
+	public void closebroswer() {
+	driver.close();	
+	}
+
+}

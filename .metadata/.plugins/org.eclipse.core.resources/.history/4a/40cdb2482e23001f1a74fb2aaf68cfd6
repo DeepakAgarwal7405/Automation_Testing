@@ -1,0 +1,37 @@
+package com.Assignment;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Phptravel {
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver","G:\\Selenium\\chromedriver-win64\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		
+
+		//to open a website
+		driver.get("https://phptravels.com/demo/");
+		//to maxmize the window
+		driver.manage().window().maximize();
+		
+		Thread.sleep(1500);
+		driver.findElement(By.name("first_name")).sendKeys("Deep");
+
+		Thread.sleep(1500);
+		driver.findElement(By.name("last_name")).sendKeys("Patel");
+		
+		Thread.sleep(1500);
+		driver.findElement(By.name("business_name")).sendKeys("Fashion");
+		
+
+		Thread.sleep(1500);
+		driver.findElement(By.name("email")).sendKeys("Deep123@yopmail.com");
+		
+		
+		
+		
+		
+	}
+
+}

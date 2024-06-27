@@ -1,0 +1,24 @@
+package com.webdriver;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+
+public class DynamicXpathDemo {
+	public static void main(String[] args) {
+		System.setProperty("webdriver.edge.driver","F:\\Selenium\\msedgedriver.exe");
+		WebDriver driver=new EdgeDriver();
+		
+		//to open a website
+		driver.get("https://www.bstackdemo.com/");
+		//to maxmize the window
+		driver.manage().window().maximize();
+		
+		driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div/div[2]/nav/a")).click();
+		
+		
+		
+		
+	}
+
+}

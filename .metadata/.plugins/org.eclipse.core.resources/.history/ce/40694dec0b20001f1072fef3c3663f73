@@ -1,0 +1,40 @@
+package com.practiceweb;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Magento {
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver","G:\\Selenium\\chromedriver-win64\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		
+
+		//to open a website
+		driver.get("https://magento.softwaretestingboard.com/");
+		//to maxmize the window
+		driver.manage().window().maximize();
+		
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/a")).click();
+		
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("dobrommeimmoubreu-6864@yopmail.com");
+		
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id=\"pass\"]")).sendKeys("Abcd@1234");
+		
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/html/body/div[2]/main/div[3]/div/div[2]/div[1]/div[2]/form/fieldset/div[4]/div[1]/button")).click();
+		
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/span/button")).click();
+		
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/div/ul/li[3]/a")).click();
+		
+		Thread.sleep(5500);
+		driver.close();
+	}
+
+}

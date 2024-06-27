@@ -1,0 +1,55 @@
+package com.Assignment;
+
+import java.util.Arrays;
+import java.util.Collection;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+
+import com.junit.AdditionDemo;
+
+import junit.framework.Assert;
+//@RunWith(Parameterized.class)
+public class JunitparameterFacebook {
+	String email,password;
+	
+	WebDriver driver;
+
+	@Before
+	public void before() throws InterruptedException {
+		System.setProperty("webdriver.edge.driver","G:\\Selenium\\msedgedriver.exe");
+		 driver=new EdgeDriver();
+		driver.get("https://www.facebook.com/");
+
+		Thread.sleep(2000);
+
+	}
+
+	@Parameterized.Parameters
+	public static Collection input(String email,String password) {
+		return Arrays.asList(new Object[][] {{"deepakagarwal7405@gmail.com","deepak7405"},{"dagarwal913@gmail.com","deepak7405"}});
+	}
+	@Test
+	public void test(String email,String password) throws InterruptedException {
+		driver.findElement(By.id("email"))
+		.sendKeys(email);
+		Thread.sleep(2000);
+		driver.findElement(By.id("pass"))
+		.sendKeys(password);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id=\"u_0_9_6o\"]")).click();
+		Thread.sleep(2000);
+		
+		driver.close();
+
+	}
+	
+
+
+}

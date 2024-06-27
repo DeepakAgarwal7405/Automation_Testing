@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+<parameter name="email" value="deepakagarwal7405@gmail.com"/>
+<parameter name="password" value="deepak7405"/>
+  <test name="Test">
+    <classes>
+      <class name="com.Assignment.TestngFacebookParameter"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

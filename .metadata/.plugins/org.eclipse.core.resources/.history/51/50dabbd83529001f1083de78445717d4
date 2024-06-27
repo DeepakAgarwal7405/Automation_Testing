@@ -1,0 +1,37 @@
+package com.junit;
+
+import static org.junit.Assert.fail;
+
+import org.junit.Ignore;
+import org.junit.Test;
+
+public class JunitAnnotation {
+	
+	public static void beforeclass() {
+		System.out.println("Before class");
+	}
+	
+	public static void before() {
+		System.out.println("Before ");
+		
+	}
+	@Test
+	public void test1() {
+		System.out.println("The test is passed");
+	}
+	@Ignore
+	@Test
+	public void test2() {
+		System.out.println("The test is failed");
+		
+	}
+	
+	public static void after() {
+		System.out.println("Before class");
+	}
+	
+	public static void afterclass() {
+		System.out.println("after class");
+	}
+
+}

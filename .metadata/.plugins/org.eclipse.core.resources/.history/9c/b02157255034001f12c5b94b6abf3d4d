@@ -1,0 +1,9 @@
+package com.Assignment;
+
+import org.testng.annotations.Test;
+
+public class TestngFacebookParameter {
+  @Test
+  public void f() {
+  }
+}

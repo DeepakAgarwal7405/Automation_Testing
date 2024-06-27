@@ -1,0 +1,48 @@
+package com.basic;
+
+public class StarPattern {
+	public static void main(String[] args) {
+		/*
+		 *      *
+		 *     ***
+		 *    *****
+		 *     ***
+		 *      *
+		 */
+		
+//		for(int i=1;i<=3;i++)
+//		{
+//			for(int k=i;k<=3;k++) {
+//				System.out.print(" ");
+//			}
+//			for(int j=1;j<=i*2-1;j++) {
+//				System.out.print("*");
+//			}
+//			System.out.println();
+//		}
+//		
+//		
+//		for(int i=2;i>=1;i--)
+//		{
+//			for(int k=i;k<=3;k++) {
+//				System.out.print(" ");
+//			}
+//			for(int j=i*2-1;j>=1;j--) {
+//				System.out.print("*");
+//			}
+//			System.out.println();
+//		}
+		/*
+		 * 	
+		 */
+		for(int i=1;i<=100;i++)
+		{
+			for(int j=1;j<=100;j++)
+			{
+				System.out.print("\u2764"+"\u25C6");
+				//System.out.print("\u25C6");
+			}
+		}
+	}
+
+}

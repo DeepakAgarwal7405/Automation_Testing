@@ -1,0 +1,65 @@
+package com.practiceweb;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ParabankRegister {
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver","G:\\Selenium\\chromedriver-win64\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		
+
+		//to open a website
+		driver.get("https://parabank.parasoft.com/parabank/index.htm");
+		//to maxmize the window
+		driver.manage().window().maximize();
+		
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id=\"loginPanel\"]/p[2]/a")).click();
+		
+		
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//*[@id=\"customer.firstName\"]")).sendKeys("Funsug");
+		
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//*[@id=\"customer.lastName\"]")).sendKeys("Wagandu");
+		
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//*[@id=\"customer.address.street\"]")).sendKeys("Jotna Nagar");
+		
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//*[@id=\"customer.address.city\"]")).sendKeys("Rajkot");
+		
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//*[@id=\"customer.address.state\"]")).sendKeys("Gujarat");
+		
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//*[@id=\"customer.address.zipCode\"]")).sendKeys("360001");
+		
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//*[@id=\"customer.ssn\"]")).sendKeys("58546885");
+		
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//*[@id=\"customer.username\"]")).sendKeys("Funsug");
+		
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//*[@id=\"customer.password\"]")).sendKeys("Abcd@1234");
+		
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//*[@id=\"repeatedPassword\"]")).sendKeys("Abcd@1234");
+		
+		//Register button
+//		Thread.sleep(1500);
+//		driver.findElement(By.xpath("//*[@id=\"customerForm\"]/table/tbody/tr[13]/td[2]/input")).click();
+		
+		// Logout button
+		Thread.sleep(1500);
+//		driver.findElement(By.xpath("//*[@id=\"leftPanel\"]/ul/li[8]/a")).click();
+		driver.close();		
+		
+		
+		
+	}
+
+}

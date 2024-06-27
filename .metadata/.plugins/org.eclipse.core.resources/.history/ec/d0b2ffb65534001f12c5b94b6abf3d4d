@@ -1,0 +1,9 @@
+package com.Assignment;
+
+import org.testng.annotations.Test;
+
+public class TestngnewGroup {
+  @Test
+  public void f() {
+  }
+}

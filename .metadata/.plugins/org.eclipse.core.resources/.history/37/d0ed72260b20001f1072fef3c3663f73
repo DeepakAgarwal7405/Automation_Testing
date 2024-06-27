@@ -1,0 +1,40 @@
+package com.practiceweb;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class MagentoRegister {
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver","G:\\Selenium\\chromedriver-win64\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		
+
+		//to open a website
+		driver.get("https://magento.softwaretestingboard.com/");
+		//to maxmize the window
+		driver.manage().window().maximize();
+		
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[3]/a")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id=\"firstname\"]")).sendKeys("Funsung");
+		
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id=\"lastname\"]")).sendKeys("jav");
+		
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id=\"email_address\"]")).sendKeys("don432@yopmail.com");
+		
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("Abcd@1234");
+		
+		
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id=\"password-confirmation\"]")).sendKeys("Abcd@1234");
+		
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//*[@id=\"form-validate\"]/div/div[1]/button")).click();
+	}
+
+}

@@ -1,0 +1,99 @@
+package com.demoqa;
+
+import java.util.Iterator;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class ElementLinks {
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver","G:\\Selenium\\chromedriver-win64\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		//to open a website
+		driver.get("https://demoqa.com/");
+
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,document.body.scrollHeight)", "");
+		driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[1]")).click();	
+		Thread.sleep(1000);
+		
+		//driver.findElement(By.xpath("//*[@id=\"item-5\"]/span")).click();
+
+
+		Actions actions=new Actions(driver);
+		//JavascriptExecutor js = (JavascriptExecutor) driver;
+		//Locating element by link text and store in variable "Element"        
+		        WebElement Element = driver.findElement(By.xpath("//*[@id=\"item-5\"]/span"));
+
+		        // Scrolling down the page till the element is found
+		        js.executeScript("arguments[0].scrollIntoView();", Element);
+		        actions.click().perform();
+		
+		
+		
+		
+		
+		
+		
+		
+		  driver.findElement(By.xpath("//*[@id=\"item-5\"]/span")).click();
+		//driver.findElement(By.id("item-5")).click();
+		
+		String main_w= driver.getWindowHandle();
+		
+		System.out.println("main window is :"+main_w);
+		
+//		//Home Button
+//		Thread.sleep(1500);
+//		driver.findElement(By.linkText("Home")).click();
+//		
+		Set<String> all_w=driver.getWindowHandles();
+//		
+//		Iterator<String> i1=all_w.iterator();
+//		
+//		while (i1.hasNext()) {
+//			String child_w = (String) i1.next();
+//			System.out.println("all window:-\n"+child_w);
+//			
+//			if (!main_w.equals(child_w)) {
+//				driver.switchTo().window(child_w);
+//				
+//				Thread.sleep(2000);
+//				driver.close();
+//			}}
+//			driver.switchTo().window(main_w);
+			
+			JavascriptExecutor js1 = (JavascriptExecutor) driver;
+//			Thread.sleep(2000);
+			js1.executeScript("window.scrollBy(0,document.body.scrollHeight)", "");
+			//driver.findElement(By.id("dynamicLink")).click();	
+			driver.findElement(By.xpath("//*[@id=\"dynamicLink\"]")).click();
+			
+			Iterator<String> i2=all_w.iterator();
+			
+			while (i2.hasNext()) {
+				String child_w = (String) i2.next();
+				System.out.println("all window:-\n"+child_w);
+				
+				if (!main_w.equals(child_w)) {
+					driver.switchTo().window(child_w);
+					
+//					Thread.sleep(2000);
+					driver.close();
+				}}
+				//driver.switchTo().window(main_w);
+		
+		//driver.close();
+	}
+
+}
